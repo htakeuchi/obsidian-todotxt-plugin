@@ -19,7 +19,7 @@ export const EditTodoDialog = (props: EditTodoProps) => {
   };
 
   const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.shiftKey && e.key === 'Enter') {
       props.onEdit(value !== '' ? value : null);
       setValue('');
       e.preventDefault();

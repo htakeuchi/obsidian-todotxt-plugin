@@ -12,8 +12,8 @@ export const CreateTodoDialog = (props: CreateTodoProps) => {
     setValue(e.currentTarget.value);
   };
 
-  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {    
+    if (e.shiftKey && e.key === 'Enter') {
       props.onAdd(value);
       setValue('');
       e.preventDefault();
